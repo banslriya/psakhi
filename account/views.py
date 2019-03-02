@@ -41,4 +41,4 @@ def edit_profile(request,id):
 	else:
 		user_form = CustomUserChangeForm(instance=request.user)
 		contact_form = UserContactForm(instance=request.user.user_contact)
-return render(request, 'account/edit_profile.html', {'user_form':user_form,'contact_form':contact_form})
+	return render(request, 'account/edit_profile.html', {'user_form':user_form,'contact_form':contact_form})

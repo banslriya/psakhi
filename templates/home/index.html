@@ -3,9 +3,241 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<h1>Patient Sakhi</h1>
-<h1>Home Page</h1>
-<h3>Problem Descrption</h3>
-<h3>Our Solution</h3>
+	<!-- slider -->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class=""></li>
+			<li data-target="#myCarousel" data-slide-to="1" class=""></li>
+			<li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+		</ol>
+		<div class="carousel-inner" role="listbox">
+			<div class="item active"> 
+				<div class="container">
+					<div class="carousel-caption">
+						<h3>PATIENTSAKHI</h3>
+						<p><b>Save Medicines Save Life</b><br>A way to save medicines from getting wasted !!!!</p>
+					</div>
+				</div>
+			</div>
+			<div class="item item2"> 
+				<div class="container">
+					<div class="carousel-caption">
+						<h3>DONATION</h3>
+                        <p>Donate your surplus medicines from your home,clinic,medical shops,hospitals to the patients in need and contribute towards humanity by 
+						<b>saving their lives</b></p>
+					</div>
+				</div>
+			</div>
+			<div class="item item3"> 
+				<div class="container">
+					<div class="carousel-caption">
+						<h3>RECEIVE</h3>
+                        <p>Get all the essential medicines at homes for 
+						<b>free</b> </p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+    </div> 
+	<!-- //slider -->
+	
 
+	<!-- main-content -->
+	<div class="main-content">
+		<!-- welcome -->
+		<div class="welcome-top">
+			<div class="container">
+				<div class="col-md-9 welcome_top_left">
+					<h3>WHAT WE DO</h3>
+					<br>
+					<p style="font-size:20px;"><b>Our platform connects patients to the surplus medicines at homes in a convenient way.</b><br>
+					We collect the unused medicines from individuals.
+					Unexpired medicines are then delivered to the needed ones and the expired medicines are 
+					then disposed in a correct way to avoid any kind of environmental pollution.
+					The medicines without name or expiry date or other credentials must also be disposed so that it doesn't harm anyone.
+					<br>Life of a human being is very precious which must be saved at any cost. 
+					Here at <span style="color:red"><b> Patient Sakhi </b></span>we pride ourselves in delivering unexpired surplus medicines
+					to low-income patients in an efficient way and in minimum possible time so that their <b>valuable lives can be saved.</p>
+				</div>
+				<div class="col-md-3 welcome_top_left">
+					<img src={% static "images/health.png" %}>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<!-- /welcome -->
+		<!-- services-list -->
+		<div class="properties">
+			<div class="container">
+				<!-- slider -->
+				<div class="properties-list">
+					<h2>WHAT TO DO WITH MEDICINES ???</h2>
+							<ul id="flexiselDemo3">
+								<li>
+									<div class="col-md-6 agileits">
+										<!-- Slider -->
+										<div class="Pro-img-w3ls">		
+											<img src={% static "images/donate.jpg" %} alt="medicine" style="height:432px;">
+										</div>
+										<!-- //Slider -->								
+									</div>
+									<div class="col-md-6 pro-details-w3layouts">
+										<h3>Medicines :</h3>	
+										<label></label>
+										<ol class="agileits-prolist">
+											<li><i class="fas fa-arrow-right"></i> One should not keep unused medicines at homes.</li>
+											<li><i class="fas fa-arrow-right"></i> Donate the surplus medicines lying in the drawers of your home and awoid their wastage.</li>
+											<li><i class="fas fa-arrow-right"></i> Anyone can receive these donated medicines free of cost</li>
+											<li><i class="fas fa-arrow-right"></i> Expired medicines are of no use so they should be disposed off to avoid environmental pollution.</li>
+											
+										</ol>
+									</div>
+								</li>
+								<li>
+									<div class="col-md-6 agileits">
+										<!-- Slider -->
+										<div class="Pro-img-w3ls">										
+											<img src={% static "images/med5.jpg" %} alt="medicine" style="height:432px;">
+										</div>
+										<!-- //Slider -->								
+									</div>
+									<div class="col-md-6 pro-details-w3layouts">
+										<h3>Donate Medicines :</h3>	
+										<label></label>
+										<ol class="agileits-prolist">
+											<li><i class="fas fa-arrow-right"></i> Do not keep unused medicines at homes.</li>
+											<li><i class="fas fa-arrow-right"></i> Donate the unused medicines lying at your homes.</li>
+											<li><i class="fas fa-arrow-right"></i> Dispose the medicines in a correct way. </li>
+											<li><i class="fas fa-arrow-right"></i> Donating unused mdicines to low-income patients can save their valuable life.</li>
+										</ol>
+									</div>
+								</li>
+								<li>
+									<div class="col-md-6 agileits">
+										<!-- Slider -->
+										<div class="Pro-img-w3ls">										
+											<img src={% static "images/med2.jpg" %} alt="expired medicine" style="height:432px;">
+										</div>
+										<!-- //Slider -->									
+									</div>
+									<div class="col-md-6 pro-details-w3layouts">
+										<h3>Expired Medicines :</h3>	
+										<label></label>
+										<ol class="agileits-prolist">
+											<li><i class="fas fa-arrow-right"></i>Proper drug disposal should be done correctly to avoid contamination of the water or create a hazard for children or pets.</li>
+											<li><i class="fas fa-arrow-right"></i>Return the expired medicines to the nearby pharmacies if possible.</li>
+											<li><i class="fas fa-arrow-right"></i>Add sawdust,kitty litter or coffee grounds with medication to the plastic bag.Seal the plastic bag and put it in the trash</li>
+											<li><i class="fas fa-arrow-right"></i>Remove and destroy all identifying personal information on the prescription label.</li>
+										</ol>
+									</div>
+								</li>
+								<li>
+									<div class="col-md-6 agileits">
+										<!-- Slider -->
+										<div class="Pro-img-w3ls">										
+											<img src={% static "images/med3.jpg" %} alt="W3layouts Agileits" style="height:432px;">
+										</div>
+										<!-- //Slider -->									
+									</div>
+									<div class="col-md-6 pro-details-w3layouts">
+										<h3>Medicines without label :</h3>	
+										<label></label>									
+										<ol class="agileits-prolist">
+											<li><i class="fas fa-arrow-right"></i> Medicines without the name or expiry date on it are of no use.So dispose them off safely.</li>
+											<li><i class="fas fa-arrow-right"></i>Never eat these medicines as it may be possible that u eat them instead of other medicine which looks similar.</li>
+											<li><i class="fas fa-arrow-right"></i> Keep these medicines out of the reach of children. </li>
+											<li><i class="fas fa-arrow-right"></i> Return these expired medicines to nearby pharmacies.</li>
+										</ol>
+									</div>
+								</li>
+						</ul>
+					<script type="text/javascript">
+						 $(window).load(function() {
+							$("#flexiselDemo3").flexisel({
+								visibleItems:1,
+								animationSpeed: 1000,
+								autoPlay: true,
+								autoPlaySpeed: 5000,    		
+								pauseOnHover: true,
+								enableResponsiveBreakpoints: true,
+								responsiveBreakpoints: { 
+									portrait: { 
+										changePoint:480,
+										visibleItems:1
+									}, 
+									landscape: { 
+										changePoint:640,
+										visibleItems:1
+									},
+									tablet: { 
+										changePoint:768,
+										visibleItems:1
+									}
+								}
+							});
+							
+						});
+					   </script>
+					   <script type="text/javascript" src={% static "js/jquery.flexisel.js" %}></script>
+					</div>   
+			</div>
+			<!-- //slider -->
+		</div>
+		<!-- //properties-list -->
+		<!-- Features -->
+		<div class="features-w3l">
+			<div class="container">
+				<div class="col-md-9 welcome_top_left" style="font-size:120%">
+					<h3>Keep Medicines Safe at home</h3>
+					<ul style="font-family:copper gothic;font-size:23px">
+						<li>Always keep the medicines inside a closed cabinet.</li>
+						<li>Try to store medications and vitamins in a cool, dry place away from bright windows or storage <br>rooms affected by outdoor weather.</li>
+						<li>For your own safety, store medications only in their original containers.</li>
+						<li>Keep medicines out of the reach of small children to avoid any accident.</li>
+						<li>Large quantities of unused medicines in the house can invite illness. It is advised to keep smaller packs.</li>
+					</ul>
+				</div>
+				<div class="col-md-3 welcome_top_left">
+					<img src={% static "images/medi.jpg" %}>
+				</div>
+			</div>
+		</div>
+		<!-- //Features -->
+		
+		<!-- Stats -->
+		<div class="stats">
+			<div class="container">
+			<h3>Our Impact</h3>
+				<div class="stats-info">
+					<div class="col-md-4 col-sm-4 stats-grid slideanim">
+						<i class="fa fa-smile-o"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='10' data-delay='.5' data-increment="0">0</div>
+						<p class="stats-info">Happy Clients</p>
+					</div>
+					<div class="col-md-4 col-sm-4 stats-grid slideanim">
+						<i class="fas fa-hand-holding-usd"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='18' data-delay='.5' data-increment="5">18</div>
+						<p class="stats-info">Donations per month</p>
+					</div>
+					<div class="col-md-4 col-sm-4 stats-grid slideanim">
+						<i class="fas fa-pills"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='16500' data-delay='.5' data-increment="20">16500 tones</div>
+						<p class="stats-info">Medicines wasted per month</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<!-- //Stats -->
+	</div>
+		
 {% endblock %}

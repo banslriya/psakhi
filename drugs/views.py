@@ -8,7 +8,7 @@ from django.urls import reverse
 
 # Create your views here.
 def medicine(request):
-	return render(request,'medicine/medicine.html')
+	return render(request,'drugs/medicine.html')
 
 def donate_medicine(request):
 	if not request.user.is_authenticated:
@@ -31,7 +31,7 @@ def donate_medicine(request):
 		return render(request,
 			          'drugs/drug_donation.html', 
 			          {'drug_form': drug_form,
-			           'supply_form': supply_form})
+			           'supply_form': supply_form,})
 
 
 

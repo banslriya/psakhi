@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+<head>
+
+<link rel="stylesheet" href={% static "https://use.fontawesome.com/releases/v5.7.2/css/all.css" %} 
+integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+{% block content %}
+	<!-- breadcrumbs -->
+	<div class="w3ls-inner-banner">
+		<div class="container">
+			<h2>About Us</h2>
+			<label></label>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- //breadcrumbs -->
+	<!-- main-content -->
+	<div class="main-content">
+	<!-- about-page -->
+		<!-- welcome -->
+		<div class="welcome-top">
+			<div class="container">
+				<div class="col-md-9 welcome_top_left">
+					<h3>WHAT WE DO</h3>
+					<br>
+					<p style="font-size:23px;"><b>Our platform connects patients to the surplus medicines at homes in a convenient way.</b>We collect the unused medicines from homes,medical shops,clinics and hospitals.Unexpired medicines are then delivered to the needed ones and the expired medicines are given to the laboratories for research purpose and pharmacies for safe disposal.Life of a human being is very precious which must be saved at any cost. Here at <span style="color:red"><b> Patient Sakhi </b></span> we pride ourselves in delivering unexpired surplus medicines to low-income patients in an efficient way and in minimum possible time so that their <b>valuable lives can be saved.</p>
+				</div>
+				<div class="col-md-3 welcome_top_left">
+					<img src={% static "images/health.png" %}>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<!-- /welcome -->
+		<!-- Stats -->
+		<div class="stats">
+			<div class="container">
+			<h3>Our Impact</h3>
+				<div class="stats-info">
+					<div class="col-md-4 col-sm-4 stats-grid slideanim">
+						<i class="fa fa-smile-o"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='15500' data-delay='.5' data-increment="50">15500</div>
+						<p class="stats-info">Happy Clients</p>
+					</div>
+					<div class="col-md-4 col-sm-4 stats-grid slideanim">
+						<i class="fas fa-hand-holding-usd" aria-hidden="true"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='18' data-delay='.5' data-increment="5">18</div>
+						<p class="stats-info">Donations per month</p>
+					</div>
+					<div class="col-md-4 col-sm-4 stats-grid slideanim">
+						<i class="fas fa-pills" aria-hidden="true"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='21500' data-delay='.5' data-increment="20">21500</div>
+						<p class="stats-info">Medicines wasted per month</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<!-- //Stats -->
+	<!-- //about-page -->
+	</div>
+<!-- //main-content -->
+{% endblock %}
+</body>
+</html>

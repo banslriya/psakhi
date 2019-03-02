@@ -1,42 +1,142 @@
+{% load staticfiles %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title></title>
+<title>PATIENTSAKHI - Save Medicine Save Life</title>
+<link href={% static "css/bootstrap.css" %} type="text/css" rel="stylesheet" media="all">
+<link href={% static "css/style.css" %} rel="stylesheet" type="text/css" media="all" />
+<link href={% static "css/styling.css" %} rel="stylesheet" type="text/css" media="all"/>
+<link href={% static "css/font-awesome.min.css" %} rel="stylesheet" type="text/css" media="all" /> 
+<link href={% static "css/carousel.css" %} type="text/css" rel="stylesheet" media="all">
+<link href={% static "images/doctor.png" %} rel="icon"> 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- meta tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //meta tags -->
+<!--fonts-->
+<link href={% static "//fonts.googleapis.com/css?family=Roboto+Condensed" %} rel="stylesheet">
+<link href={% static "//fonts.googleapis.com/css?family=Open+Sans" %} rel="stylesheet">
+<!--//fonts-->	        
+<script type="text/javascript" src={% static "js/jquery-2.1.4.min.js" %} ></script><!-- Required-js -->
+<!-- requried-jsfiles-for owl -->
+	<link href={% static "css/owl.carousel.css" %} rel="stylesheet" type="text/css" media="all" />
+	<script src={% static "js/owl.carousel.js" %} ></script>
+	<script>
+		$(document).ready(function() {
+			$("#owl-demo").owlCarousel({
+				items : 4,
+				lazyLoad : true,
+				autoPlay : true,
+				navigation : true,
+				navigationText :  true,
+				pagination : false,
+			});
+		});
+	</script>
+	<script src={% static "js/bootstrap.min.js" %} ></script>
+	<script type="text/javascript" src={% static "js/numscroller-1.0.js" %} ></script>
 </head>
 <body>
+	<!-- header -->
+	<header>
+		<div class="container">
+			<nav class="navbar navbar-inverse">
+			  <div class="container-fluid">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				<div class="logo">
+					<h1><a href="{% url 'home:home' %}">PATIENTSAKHI</a></h1>
+				</div>	
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				  <ul class="nav navbar-nav">
+					<li><a href="{% url 'home:home' %}">Home</a></li>
+					<li><a href="{% url 'home:about' %}">About</a></li>
+					<li><a href="{% url 'home:services' %}">Services</a></li>
+					<li><a href="{% url 'home:support_us' %}">Support Us</a></li>
+					<li style="margin-top:9px;">{% if user.is_authenticated %}
+						<a href="{% url 'account:profile' %}" style="display:inline;">My Account</a>
+						<a href="{% url 'logout' %}?next={% url 'home:home' %}" style="display:inline;">Logout</a></li>
+						<li style="margin-top:9px;">{% else %}
+						<a href="{% url 'login' %}?next={% url 'account:profile' %}" style="display:inline;"> Login</a>
+						<a href="{% url 'account:sign-up' %}" style="display:inline;">SignUp</a>
+					{% endif %}</li>
+				  </ul>
+				</div>
+			  </div>
+			</nav> 
+			<script src="js/nav.js"></script>
+		</div>
+	</header>
 	
-{% if user.is_authenticated %}
-	<a href="#">My Account</a>
-	<a href="#">Logout</a>
-	{% else %}
-	<a href="#"> Login</a>
-	<a href="#">SignUp</a>
-{% endif %}
-<ul>
-		<li><a href="#">home</a></li>
-		<li><a href="#">about_us</a></li>
-		<li><a href="#">our services</a></li>
-		<li><a href="#">support_us</a></li>
-		<li><a href="#">contact_us</a></li>
-</ul>
+	{% block content %}
+	
+	{% endblock %}
+	<footer>	
+		<!-- footer-top -->
+		<div class="footer-top">
+			<div class="container">
+				<div class="col-md-6 footer-top-left">
+					<h3><a href={% static "index.html" %} >PATIENTSAKHI</a></h3>
+					<p>Our platform connects surplus medicines at homes,clinics,hospitals to patients in need in a convenient way</p>
+					<ul class="fb_icons2">
+						<li><a class="fb" href="https://www.facebook.com"><i class="fab fa-facebook"></i></a></li>
+						<li><a class="twit" href="https://www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+						<li><a class="goog" href="https://plus.google.com"><i class="fab fa-google-plus-square"></i></a></li>
+						<li><a class="pin" href="https://www.pinterest.com"><i class="fab fa-pinterest"></i></a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-top-mid">
+					<h3>Includes</h3>
+					<ul>
+						<li><a href="{% url 'home:home' %}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Home</a></li>
+						<li><a href="{% url 'home:about' %}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>About</a></li>
+						<li><a href="{% url 'home:services' %}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Services</a></li>
+						<li><a href="{% url 'home:support_us' %}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Support Us</a></li>
+					</ul>
 
-
-{% block content %}
-
-
-{% endblock %}
-
-<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+				</div>
+				<div class="col-md-3 adress-agile">
+					<h3>Address</h3>
+					<address>
+						<ul>
+							<li>Modern Institute of</li>
+							<li>Technology and Research Center</li>
+							<li>Alwar,Rajasthan</li>
+							<li>Telephone : 1800 2333 4555</li>
+							<li>Email : <a class="mail" href="mailto:mail@patientsakhi.com">patientsakhi.com</a></li>
+						</ul>
+					</address>				
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</footer>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script>
+	<!-- start-smoth-scrolling -->
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!-- start-smoth-scrolling -->			
 </body>
 </html>

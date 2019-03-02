@@ -47,4 +47,4 @@ def drug_stock(request):
 		return render(request,
 			          'service/drug_stocker.html', 
 			          {'drug_sform': drug_sform,
-			           })
+})

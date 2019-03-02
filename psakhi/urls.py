@@ -23,8 +23,8 @@ from drugs import views
 urlpatterns = [
     path('',include('home.urls')),
     path('admin/', admin.site.urls),
-    #path('account/', include('django.contrib.auth.urls')),
-    #path('account/', include('account.urls')),
-    #path('drugs/',include('drugs.urls')),
-    #path('service/',include('service.urls')),
+    path('account/', include('django.contrib.auth.urls')),
+    path('account/', include('account.urls')),
+    path('drugs/',include('drugs.urls')),
+    path('service/',include('service.urls')),
 ]
