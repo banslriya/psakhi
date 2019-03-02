@@ -3,6 +3,7 @@ from django.urls import reverse
 from .forms import SupplyForm 
 from .forms import DemandForm, DrugStockerForm
 from drugs.forms import DrugForm, DrugCategoryForm
+from .models import Supply
 
 # Create your views here.
 
@@ -17,10 +18,9 @@ def donate_medicine(request):
 			drug_form = DrugForm(request.POST)
 			supply_form = SupplyForm(request.POST)
 			if drug_form.is_valid() and supply_form.is_valid():
-				supply_form.save(commit=False)
+				supply = Supply.objects.create(donor=request.user,
+					                  address=supply_form.cleaned_data['address'])
 				drug_form.save(commit=False)
-				supply_form.instance.donor = request.user
-				supply = supply_form.save()
 				drug_form.instance.supply = supply
 				drug_form.save()			
 			return redirect(reverse('home'))

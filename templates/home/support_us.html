@@ -4,31 +4,85 @@
 
 {% block content %}
 
+<!-- breadcrumbs -->
 <div class="w3ls-inner-banner">
 	<div class="container">
-		<h2>Our Services</h2>
+		<h2>Support-Us</h2>
 		<label></label>
 		<div class="clearfix"></div>
 	</div>
 </div>
-
+<!-- //breadcrumbs -->
 	
+<!-- main-content -->
 <div class="main-content">
 	<!-- services -->
 	<div class="agileits-blog-posts">
 		<div class="container">
 			<div class="blog col-md-12">
 				<div class="single-inline">
-					<ul>
-						<li><a href="{% url 'drugs:donate_medicine' %}">Donate the medicine</a></li>
-						<li><a href="#">Monetary Help</a></li>
-						<li><a href="#">Drug Stock</a></li>
-						<li><a href="#">Transporter</a></li>
-					</ul>
+					<div class="w3layouts-blog-to">						
+						<a href="{% url 'drugs:donate_medicine' %}"><img class="img-responsive sin-on" src={% static "images/donor.jpg" %} alt="" style="width:500px;height:280px;border:1px solid silver" /></a>
+						<div class="blog-top">
+							<div class="top-blog">
+								<a class="fast" href="{% url 'drugs:donate_medicine' %}">DONOR</a>
+								<!--Donor content-->
+								<p class="sed">The donors are the users who donates the unutilised medicines stored in their homes through the web-application.
+								They donate medicines for the people who can't afford these expensive medicines.
+								For donating medicines they first need to register themselves on the app.Then they provide the details of the medicines they want to donate.
+								Donating of illegal drugs is not entertained and if found,severe actions will be taken.</p>  
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					
+					<div class="w3layouts-blog-to">		
+						<a href="#"><img class="img-responsive sin-on" src={% static "images/helping.jpg" %} alt="" style="width:500px;height:280px;"/></a>
+						<div class="blog-top">
+							<div class="top-blog">
+								<a class="fast" href="#">MONETORY HELP</a>
+								<!-- Agent content--> 								
+								<p class="sed">Donate as much as you can and save the lives of the poor people.
+								We are all working for the social cause and it could be only implemented if we all join our hands and work as a collective well being.<br>Your one step can save many lives , so <b>take a step towards humanity and make this step a REVOLUTION.<br><br></b>.</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+
+					<div class="w3layouts-blog-to">		
+						<a href="#"><img class="img-responsive sin-on" src={% static "images/del1.jpg" %} alt="" style="width:500px;height:280px;"/></a>
+						<div class="blog-top">
+							<div class="top-blog">
+								<a class="fast" href="#">TRANSPORTER</a>
+								<!-- Agent content--> 								
+								<p class="sed">Transporter are those people who collect medicines from those donors who want to donate medicines 
+								but unable to come to our centres for submitting them.People who are interested in doing social service can work as an agent.
+								They can collect medicines from those people who lies in between their daily route and then submit them at the centres.</p> 
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div class="w3layouts-blog-to">							
+						<a href="#"><img class="img-responsive sin-on" src={% static "images/Medicine-shop.jpg" %} alt="" style="width:500px;height:280px;" /></a>
+						<div class="blog-top">
+							<div class="top-blog">
+								<a class="fast" href="#">MEDICINE STOCK CENTRES</a>
+								<!--centres content-->
+								<p class="sed">Medicine Stock Centres are the hospitals and pharmaceutical shops who keeps the stock of medicines donated by the people.
+								The donators have to submit the medicines at these centres directly or through the agents.
+								The people who want medicines have to come to these centres along with their BPL card for taking medicines.</p> 
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					
+					
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="clearfix"> </div>
+	<!-- //services -->
 </div>
+<!-- //main-content -->
 {% endblock %}

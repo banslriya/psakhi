@@ -4,6 +4,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<div class="form1" style="font-size:15px;height:600px;">
 <form method="post">
   {% csrf_token %} 
   
@@ -32,6 +33,6 @@
   <button type="submit">Update</button>
 
 </form>
-
+</div>
 
 {% endblock %}

@@ -1,14 +1,19 @@
 {% extends "base.html" %}
-{% load staticfiles %}
 {% load crispy_forms_tags %}
-{% block content %}
-<form method="post">
-  {% csrf_token %} 
-  {{ form|crispy }}
-	<input type="submit" value="Log in">
-  	<input type="hidden" name="next" value="{{ next }}">
-</form>
 
-<p>Forgot password<a href="password-reset/">Reset it</a>!</p>
-<p>Not member? <a href="{% url 'account:sign-up' %}">Register</a>!</p>
+{% block content %}
+<div class="form1">
+	<h3 style="text-align:center;">LOG IN INTO YOUR ACCOUNT</h3><br><br>
+	<form method="post" action=".">
+		{% csrf_token %} 
+		{{ form|crispy }}
+		<br>
+		<center><input class="btn1" type="submit" value="Log in" /></center>
+		<br>
+		<input type="hidden" name="next" value="{{ next }}" />
+	</form>
+	<p>Forgot password<a href="password-reset/">Reset it</a>!</p>
+	<p>Not member? <a href="{% url 'account:sign-up' %}">Register</a>!</p>
+</div>
+<br><br>
 {% endblock %}

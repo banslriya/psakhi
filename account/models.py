@@ -5,12 +5,16 @@ from django.dispatch import receiver
 
 # Create your models here.
 
-class UserContact(models.Model):
+class Profile(models.Model):
     user = models.OneToOneField(User, 
                                 on_delete=models.CASCADE, 
-                                related_name='user_contact')
+                                related_name='profile')
     address = models.TextField(blank=True, null=True)
     phone = models.CharField(max_length=10, blank=True, null=True)
+    is_supplier = models.BooleanField(default=False)
+    is_buyer = models.BooleanField(default=False)
+    is_stocker = models.BooleanField(default=False)
+
 
     def __str__(self):
         return f"{self.user.username} contact"
@@ -18,17 +22,5 @@ class UserContact(models.Model):
 @receiver(post_save, sender=User)
 def create_or_update_user_contact(sender, instance, created, **kwargs):
     if created:
-        UserContact.objects.create(user=instance)
-    instance.user_contact.save()
-
-
-
-class Role(models.Model):
-    '''
-    The Role entries are managed by the system,
-    automatically created via a Django data migration.'''
-
-    user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='user_role')
-    is_supplier = models.BooleanField(default=False)
-    is_buyer = models.BooleanField(default=False)
-    is_stocker = models.BooleanField(default=False)
+        Profile.objects.create(user=instance)
+        instance.profile.save()

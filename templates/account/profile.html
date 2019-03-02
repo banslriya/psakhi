@@ -3,9 +3,11 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<div class="profile" style="font-size:20px;">
 <p>This is Profile Page</p>
  <b>Username:</b>
- {{user.username}}
-<b> the Id of username is {{user.id}}</b>
+ {{user.username}}<br>
+<br>
  <b><a href="{% url 'account:edit_profile' user.id %}">Edit Profile</a></b>
+</div>
 {% endblock %}

@@ -28,3 +28,4 @@ urlpatterns = [
     path('drugs/',include('drugs.urls')),
     path('service/',include('service.urls')),
 ]
+

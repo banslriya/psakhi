@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm 
-from .forms import UserContactForm , CustomUserChangeForm
+from .forms import ProfileForm , CustomUserChangeForm   # CHANGE
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
-from .models import UserContact
+from .models import Profile                          # CHANGE
 
 # Create your views here.
 
@@ -29,7 +29,7 @@ def profile(request):
 def edit_profile(request,id):
 	if request.method == 'POST':
 		user_form = CustomUserChangeForm(request.POST, instance=request.user)
-		contact_form = UserContactForm(request.POST ,instance=request.user.user_contact)
+		contact_form = ProfileForm(request.POST ,instance=request.user.profile) # CHANGE
 		user_form.save(commit=False)
 		contact_form.instance.user = request.user
 		user_form.save()
@@ -40,5 +40,5 @@ def edit_profile(request,id):
 			
 	else:
 		user_form = CustomUserChangeForm(instance=request.user)
-		contact_form = UserContactForm(instance=request.user.user_contact)
+		contact_form = ProfileForm(instance=request.user.profile)   # CHANGE
 	return render(request, 'account/edit_profile.html', {'user_form':user_form,'contact_form':contact_form})

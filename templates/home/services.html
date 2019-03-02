@@ -4,6 +4,8 @@
 
 {% block content %}
 
+
+<!-- breadcrumbs -->
 <div class="w3ls-inner-banner">
 	<div class="container">
 		<h2>Our Services</h2>
@@ -11,23 +13,46 @@
 		<div class="clearfix"></div>
 	</div>
 </div>
-
+<!-- //breadcrumbs -->
 	
+<!-- main-content -->
 <div class="main-content">
-	<!-- services -->
-	<div class="agileits-blog-posts">
+	<div class="features-w3l">
 		<div class="container">
-			<div class="blog col-md-12">
-				<div class="single-inline">
-					<ul>
-						<li><a href="#">See your nearby medical store</a></li>
-						<li><a href="#">Disposal of Medicine</a></li>
-		
-					</ul>
-				</div>
+			<div class="col-md-9 welcome_top_left" style="font-size:120%">
+				<h3><a href="{% url 'service:buy_medicine' %}">FIND YOUR NEARBY MEDICAL STOCK CENTRES</a></h3>
+				<p style="font-family:copper gothic;font-size:20px"></p>
+			</div>
+			<div class="col-md-3 welcome_top_left">
 			</div>
 		</div>
 	</div>
-	<div class="clearfix"> </div>
-</div>
+
+	<div class="features-w3l">
+		<div class="container">
+			<div class="col-md-9 welcome_top_left" style="font-size:120%">
+				<h3><a href="#">DISPOSAL OF MEDICINES</a></h3>
+				<p style="font-family:copper gothic;font-size:20px">When your medicines are no longer needed, they should be disposed of promptly. Consumers and caregivers should remove expired, unwanted, or unused medicines from their home as quickly as possible to help reduce the chance that others accidentally take or intentionally misuse the unneeded medicine, and to help reduce drugs from entering the environment. Below, we list some options and special instructions for you to consider when disposing of expired, unwanted, or unused medicines.</p>
+				<br><br>
+				Your best choices for disposal of unused or expired medicines are:
+				<br>
+				<ol>
+					<li>Medicine take-back options</li>
+					<li>Disposal in the household trash</li>
+					<li>Flushing certain potentially dangerous medicines in the toilet</li>
+				</ol>
+				<br>
+				<p>These processes of disposing medicines could also cause environmental pollution and may harm many lives.<br>
+				thus, the only way to dispose the unused and expired medicines is to dispose them at a very high temperature (i.e. above 1,200ºC) incineration.</p>
+				<p>After collection of unused medicines, the expired medicines are send for the thermal decomposition from the medical stock centres to save the environment.</p>
+			</div>
+			<div class="col-md-3 welcome_top_left">
+				<img src={% static "images/disposal.png" %}>
+			</div>
+		</div>
+	</div>
+<div>
+<!-- main-content -->		
 {% endblock %}
+
+
