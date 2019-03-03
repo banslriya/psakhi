@@ -17,7 +17,7 @@
           <tr style="border:1px solid gray">
             <td style="padding: 20px;text-align: center; ">{{drug.name}}</td>
             <td style="padding: 20px;text-align: center; ">{{s.donated_on}}</td>
-            <td style="padding: 20px;text-align: center; ": center; "></td>
+            <td style="padding: 20px;text-align: center; ": center; ">{% if s.assignment %} will be collected on {{ s.assignment.pick_date }}{% endif %}</td>
           </tr>
           {% endfor %}
          {% endfor %} 
