@@ -4,20 +4,17 @@
 
 {% block content %}
 <div style="text-align:center;margin-bottom:100px;margin-top:100px;">
-<h4><a href="">Take assignment</a></h4><br><br>
-
-
-
-
-
-
-<h3>Available Medicine:</h3>
-{% for s in supply %}
-<li>{{s.address}}</li>
-{% endfor %} <br><br>
-<h3>Nearest Storage Point</h3>
-{% for s in stock %}
-<li>{{s.address}}</li>
-{% endfor %}
+<form  method="post" class="form1">
+  {% csrf_token %} 
+  {{form.as_p}}
+<input class="btn1" type="submit" value="Save">
+</form>
 </div>
 {% endblock %}
+
+
+
+
+
+
+

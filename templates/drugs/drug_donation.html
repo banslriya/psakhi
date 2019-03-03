@@ -4,15 +4,15 @@
 
 
 {% block content %}
-<div class="form1" style="margin-bottom:250px;">
-<form method="post">
-	<h3>Enter The Detail</h3>
-  {% csrf_token %} 
+<div class="form1">
+	<form method="post">
+		<h3 style="text-align:center;">ENTER DETAILS OF MEDICINE</h3><br><br>
+	  {% csrf_token %} 
 
-  {{ drug_form|crispy }}
-  {{ supply_form|crispy }}
+	  {{ drug_form|crispy }}
+	  {{ supply_form|crispy }}
 
-	<input type="submit" value="Save">
-</form>
+		<input class="btn1" type="submit" value="Save">
+	</form>
 </div>
 {% endblock %}

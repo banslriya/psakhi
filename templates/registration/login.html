@@ -1,4 +1,4 @@
-_{% extends "base.html" %}
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
 
 {% block content %}
@@ -12,8 +12,8 @@ _{% extends "base.html" %}
 		<br>
 		<input type="hidden" name="next" value="{{ next }}" />
 	</form>
-	<p>Forgot password<a href="{% url 'account:pasre' %}">Reset it</a>!</p>
-	<p>Not member? <a href="{% url 'account:sign-up' %}">Register</a>!</p>
+	<p>Forgot password<a href="{% url 'account:pasre' %}" style="color:red;">Reset it</a>!</p>
+	<p>Not member? <a href="{% url 'account:sign-up' %}" style="color:red;">Register</a>!</p>
 </div>
 <br><br>
 {% endblock %}

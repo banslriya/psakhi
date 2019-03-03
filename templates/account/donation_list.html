@@ -4,7 +4,7 @@
 
 {% block profile_content %}
   <div style="margin-bottom:100px;">
-        <h2 style="text-align: center;padding: 20px;font-family: copper gothic;color: white;background-color: dodgerblue;">My Donations</h2><br><br>
+        <h2 style="text-align: center;padding: 20px;font-family: copper gothic;color: white;background-color: purple;">My Donations</h2><br><br>
 
          <table class="table-striped" style="margin-left:auto;margin-right:auto; width:80%;border:1px solid black;padding: 20px;">
           <tr style="border:1px solid gray">
@@ -15,9 +15,9 @@
         {% for s in supply %}
         {% for drug in s.drug_set.all %}
           <tr style="border:1px solid gray">
-            <td style="text-align: center; ">{{drug.name}}</td>
-            <td style="text-align: center; ">{{s.donated_on}}</td>
-            <td style="text-align: center; ": center; "></td>
+            <td style="padding: 20px;text-align: center; ">{{drug.name}}</td>
+            <td style="padding: 20px;text-align: center; ">{{s.donated_on}}</td>
+            <td style="padding: 20px;text-align: center; ": center; "></td>
           </tr>
           {% endfor %}
          {% endfor %} 

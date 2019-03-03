@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from .forms import SupplyForm
 from .forms import DemandForm, DrugStockForm, AddressForm
+from .forms import AssignmentForm
 from drugs.forms import DrugForm, DrugCategoryForm
-from .models import Supply, DrugStock
+from .models import Supply, DrugStock, Assignment
 from django.contrib.gis.geos import Point
 from django.contrib.gis.db.models.functions import Distance
 import geocoder
@@ -54,39 +55,41 @@ def drug_stock(request):
 		else:
 			stock_form = DrugStockForm()
 		return render(request,
-			          'service/drug_stocker.html', 
-					{'stock_form': stock_form})
+			          'service/drug_stock.html', 
+			          {'stock_form': stock_form})
 
 
 def check_assignment(request):
 	if request.method == 'POST':
 		form = AddressForm(request.POST)
 		if form.is_valid():
-			address = form.cleaned_data['address']		
+			address = form.cleaned_data['address']
+			request.user.profile.temp_address = address
+			request.user.profile.save()		
 			g = geocoder.mapbox(address, key=MB_KEY)
 			p = Point(g.latlng[0],g.latlng[0], srid=4326)
 			supply = Supply.objects.annotate(distance=Distance('location', p)).order_by('distance')[0:]
 			stock = DrugStock.objects.annotate(distance=Distance('location', p)).order_by('distance')[0:]
 			context = {'supply': supply, 'stock': stock}
-			return render(request, 'service/take_assignment.html', context )
+			return render(request, 'service/check_assignment.html', context )
 	else:
 		form = AddressForm()
-		context = {'form': form}
-	return render(request, 'service/check_assignment.html', context )
+	return render(request, 'service/find_assignment.html', {'form': form} )
 
 
-
-def near_store(request):
+def assign_volunteer(request):
 	if request.method == 'POST':
-		form = AddressForm(request.POST)
+		form = AssignmentForm(request.user,request.POST)
 		if form.is_valid():
-			address = form.cleaned_data['address']		
-			g = geocoder.mapbox(address, key=MB_KEY)
-			p = Point(g.latlng[0],g.latlng[0], srid=4326)
-			stock = DrugStock.objects.annotate(distance=Distance('location', p)).order_by('distance')[0:]
-			context = {'stock': stock}
-			return render(request, 'service/near_store.html', context )
+			sup = Supply.objects.get(id=form.cleaned_data['pick_point'])
+			stock = DrugStock.objects.get(id=form.cleaned_data['drop_point'])
+			Assignment.objects.create(transporter=request.user,
+				                      source=sup,
+				                      dest = stock,
+				                      pick_date = form.cleaned_data['pick_date'],
+				                      drop_date = form.cleaned_data['drop_date']
+				                      )
+			return redirect(reverse('account:profile'))
 	else:
-		form = AddressForm()
-		context = {'form': form}
-	return render(request, 'service/check_assignment.html', context )
+		form = AssignmentForm(request.user)
+	return render(request, 'service/take_assignment.html', {'form':form})

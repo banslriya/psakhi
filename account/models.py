@@ -14,6 +14,7 @@ class Profile(models.Model):
     is_supplier = models.BooleanField(default=False)
     is_buyer = models.BooleanField(default=False)
     is_stocker = models.BooleanField(default=False)
+    temp_address = models.TextField(blank=True, null=True)
 
 
     def __str__(self):
@@ -23,4 +24,4 @@ class Profile(models.Model):
 def create_or_update_user_contact(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
-        instance.profile.save()
+    instance.profile.save()
