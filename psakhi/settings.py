@@ -136,3 +136,25 @@ STATIC_DIR = os.path.join (BASE_DIR, 'static/')
 STATICFILES_DIRS = [STATIC_DIR,]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'riyabansal261198@gmail.com'
+EMAIL_HOST_PASSWORD = 'riya@261198bansal'
+
+'''
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/account/reset/NA/54a-5cad660d0539038f805e/
+
+Your username, in case you've forgotten: vipin3699
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+'''

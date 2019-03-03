@@ -53,7 +53,7 @@
 						<a href="#"><img class="img-responsive sin-on" src={% static "images/del1.jpg" %} alt="" style="width:500px;height:280px;"/></a>
 						<div class="blog-top">
 							<div class="top-blog">
-								<a class="fast" href="#">TRANSPORTER</a>
+								<a class="fast" href="{% url 'service:check_assignment' %}">TRANSPORTER</a>
 								<!-- Agent content--> 								
 								<p class="sed">Transporter are those people who collect medicines from those donors who want to donate medicines 
 								but unable to come to our centres for submitting them.People who are interested in doing social service can work as an agent.
@@ -66,7 +66,7 @@
 						<a href="#"><img class="img-responsive sin-on" src={% static "images/Medicine-shop.jpg" %} alt="" style="width:500px;height:280px;" /></a>
 						<div class="blog-top">
 							<div class="top-blog">
-								<a class="fast" href="#">MEDICINE STOCK CENTRES</a>
+								<a class="fast" href="{% url 'service:create_stock' %}">MEDICINE STOCK CENTRES</a>
 								<!--centres content-->
 								<p class="sed">Medicine Stock Centres are the hospitals and pharmaceutical shops who keeps the stock of medicines donated by the people.
 								The donators have to submit the medicines at these centres directly or through the agents.

@@ -64,9 +64,8 @@ integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9
 					<li><a href="{% url 'home:about' %}">About</a></li>
 					<li><a href="{% url 'home:services' %}">Services</a></li>
 					<li><a href="{% url 'home:support_us' %}">Support Us</a></li>
-					<li><a href="#">Our Centers</a></li>
 					<li style="margin-top:9px;">{% if user.is_authenticated %}
-						<a href="{% url 'account:profile' %}" style="display:inline;">My Account</a>
+						<a href="{% url 'account:profile' %}" style="display:inline;">My Profile</a>
 						<a href="{% url 'logout' %}?next={% url 'home:home' %}" style="display:inline;">Logout</a></li>
 						<li style="margin-top:9px;">{% else %}
 						<a href="{% url 'login' %}?next={% url 'account:profile' %}" style="display:inline;"> Login</a>
@@ -104,7 +103,6 @@ integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9
 						<li><a href="{% url 'home:about' %}"><i class="fas fa-arrow-right" aria-hidden="true"></i>About</a></li>
 						<li><a href="{% url 'home:services' %}"><i class="fas fa-arrow-right" aria-hidden="true"></i>Services</a></li>
 						<li><a href="{% url 'home:support_us' %}"><i class="fas fa-arrow-right" aria-hidden="true"></i>Support Us</a></li>
-						<li><a href="#"><i class="fas fa-arrow-right" aria-hidden="true"></i>Our Centers</a></li>
 					</ul>
 
 				</div>

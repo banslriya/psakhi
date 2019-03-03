@@ -24,7 +24,7 @@ def donate_medicine(request):
 				drug_form.save(commit=False)
 				drug_form.instance.supply = supply
 				drug_form.save()			
-			return redirect(reverse('home:home'))
+			return redirect(reverse('account:profile'))
 		else:
 			drug_form = DrugForm()
 			supply_form = SupplyForm()

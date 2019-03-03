@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+<div style="text-align:center;margin-bottom:100px;margin-top:100px;">
+<br><br>
+
+<h3>Nearest Storage Point</h3>
+{% for s in stock %}
+<li>{{s.address}}</li>
+{% endfor %}
+</div>
+{% endblock %}

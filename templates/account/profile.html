@@ -1,13 +1,49 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% load crispy_forms_tags %}
-
 {% block content %}
-<div class="profile" style="font-size:20px;">
-<p>This is Profile Page</p>
- <b>Username:</b>
- {{user.username}}<br>
-<br>
- <b><a href="{% url 'account:edit_profile' user.id %}">Edit Profile</a></b>
+<div class="w3ls-inner-banner">
+	<div class="container" style="fon">
+		<h2>My Profile</h2>
+		<h3 style="text-align:right;font-weight:bold;color:black;">
+ 	{{user.username}}
+</h3>
+		<label></label>
+		<div class="clearfix"></div>
+	</div>
 </div>
+	
+<div class="main-content" style="margin-top:60px;height:150px;">
+	<div class="features-w3l">
+		<div class="container">
+			<div class="col-md-5 welcome_top_left" style="font-size:120%">
+				<img src={% static "images/profile.png" %} width=250px height=250px><br><br><br>
+				<h4 class="edit_profile"><b><a href="{% url 'account:edit_profile' user.id %}">EDIT PROFILE</a></b></h4>
+			</div>
+			<div class="col-md-7 welcome_top_left" style="padding: 30px;">
+				<h3 style="text-align: left;">{{user.username}}<h3>
+				
+				<h4 class="profile"><a href="{% url 'drugs:donate_medicine' %}">DONATE</a></h4><br>
+				<h4 class="profile"><a href="{% url 'account:donations' %}">MY DONATIONS</a></h4>
+				{% if user.is_stocker %}
+				<br>
+				<a href="{% url 'service:create_stock' %}">Register as Stocker</a>
+				{% endif %}
+				<br>
+				<h4 class="profile"><a href="">MY STOCK</a></h4>
+				<br>
+				<h4 class="profile"><a href="{% url 'service:check_assignment' %}">VOLUNTEER</a></h4>
+				<br>
+				<h4 class="profile"><a href="{% url 'service:near_store' %}">FIND NEAREST STORE</a></h4>
+				
+			</div>
+		</div>
+	</div>
+<div>
+
+
+		{% block profile_content %}
+
+		{% endblock %}
+
 {% endblock %}
