@@ -1,2 +1,4 @@
 # psakhi
-# sih_mindtree_lb5_panda_coders
+
+
+# the website is basically done on django framework and its frontend is not completed yet .Its backend is almost about to complete.
